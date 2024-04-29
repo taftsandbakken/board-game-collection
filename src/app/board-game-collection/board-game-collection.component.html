@@ -1,0 +1,53 @@
+<div class="collection-container">
+  <h1 class="center-text">My Board Game Collection</h1>
+  <div class="toolbar">
+    <button mat-raised-button class="load-button" (click)="loadGames()">Load Games</button>
+    <mat-form-field class="input-form">
+      <mat-label>BGG Username</mat-label>
+      <input
+        matInput
+        placeholder="Ex. bobsmith"
+        [(ngModel)]="username"
+        (keyup.enter)="loadGames()"
+      >
+    </mat-form-field>
+  </div>
+  @if (pageState === PageState.Loading) {
+    <mat-spinner ></mat-spinner>
+  }
+  @else if (pageState === PageState.Ready) {
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="My Collection">
+        <div class="card-container">
+          @if (myBoardGameCollection == null || myBoardGameCollection?.length === 0) {
+            <p>
+              You don't have any games in your collection. Go to
+              <a [href]="'https://boardgamegeek.com/collection/user/' + username" target="_blank">BGG</a>
+              to begin adding them.
+            </p>
+          }
+          @for (game of myBoardGameCollection; track game) {
+            <board-game-tile [game]="game"><div>{{ game.yearpublished._text }}</div></board-game-tile>
+          }
+        </div>
+      </mat-tab>
+      <mat-tab label="My Wishlist">
+        <div class="card-container">
+          @if (myBoardGameWishlist == null || myBoardGameWishlist?.length === 0) {
+            <p>
+              You don't have any games in your wishlist. Go to
+              <a [href]="'https://boardgamegeek.com/wishlist/' + username" target="_blank">BGG</a>
+              to begin adding them.
+            </p>
+          }
+          @for (game of myBoardGameWishlist; track game) {
+            <board-game-tile [game]="game"><div>Priority: {{ game.status._attributes.wishlistpriority }}</div></board-game-tile>
+          }
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  }
+  @else if (pageState === PageState.Error) {
+    <h4 class="center-text">{{ errorMsg }}</h4>
+  }
+</div>

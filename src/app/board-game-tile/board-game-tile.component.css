@@ -1,0 +1,15 @@
+.mat-mdc-card {
+  width: 236px;
+  height: 300px;
+  display: inline-flex;
+  text-align: center;
+}
+
+mat-card-header {
+  margin: 0 auto;
+}
+
+.game-name {
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
