@@ -19,7 +19,7 @@
     <mat-tab-group dynamicHeight>
       <mat-tab label="My Collection">
         <div class="card-container">
-          @if (myBoardGameCollection == null || myBoardGameCollection?.length === 0) {
+          @if (myBoardGameCollection == null || myBoardGameCollection.length === 0) {
             <p>
               You don't have any games in your collection. Go to
               <a [href]="'https://boardgamegeek.com/collection/user/' + username" target="_blank">BGG</a>
@@ -33,7 +33,7 @@
       </mat-tab>
       <mat-tab label="My Wishlist">
         <div class="card-container">
-          @if (myBoardGameWishlist == null || myBoardGameWishlist?.length === 0) {
+          @if (myBoardGameWishlist == null || myBoardGameWishlist.length === 0) {
             <p>
               You don't have any games in your wishlist. Go to
               <a [href]="'https://boardgamegeek.com/wishlist/' + username" target="_blank">BGG</a>
