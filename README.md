@@ -1,5 +1,7 @@
 # BoardGameCollection
 
+The purpose of this project was to practice angular 17, rxjs, and clean coding practices. Also, I have always wanted a way to see my board game collection online and so it was fun to use BGG's API.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
 ## Development server
