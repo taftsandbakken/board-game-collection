@@ -6,10 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `npm i` to download dependencies
+Run `npm i` to download dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## To Do
 
-Add filters, sorting, more details about each game, unit tests
+Add filters, sorting, more details about each game, unit tests.
